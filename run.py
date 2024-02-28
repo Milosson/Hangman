@@ -110,7 +110,10 @@ def game_options():
     2. Medium ( 6-8 Letter word and 6 lives )
     3. Hard ( 8-11 Letter word and 7 lives )
     """
-
+# . . . . 
+# . . . . 
+# . . . . 
+# . . . . 
 
 
 
