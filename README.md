@@ -113,7 +113,7 @@ Content for the "Credits
 </details>
 
 <details>
-<summary><h3>THANKS AND GOODBYE</h3></summary>
+<summary><h3>Bidding Adieu</h3></summary>
 
 BIIIIIG THANKS AND BIG BYE! 
 
