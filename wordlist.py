@@ -55,12 +55,13 @@ graphics = ['''
       |
 =========''']
 
+
 logo = """ 
 
  __ __  ____ ____   ____      ___ ___  ____ ____  
-|  |  |/    |    \ /    |    |   |   |/    |    \   
+|  |  |/    |    \\ /    |    |   |   |/    |    \\   
 |  |  |  o  |  _  |   __|    | _   _ |  o  |  _  |
-|  _  |     |  |  |  |  |    |  \_/  |     |  |  |
+|  _  |     |  |  |  |  |    |  \\_/  |     |  |  |
 |  |  |  _  |  |  |  |_ |    |   |   |  _  |  |  |
 |  |  |  |  |  |  |     |    |   |   |  |  |  |  |
 |__|__|__|__|__|__|___,_|    |___|___|__|__|__|__|
@@ -73,8 +74,7 @@ logo = """
                                   
 """
 
-gamedescription = 
-"""
+gamedescription = """
 Hangman is a word-guessing game where players try to guess a hidden word one letter at a time.
 Incorrect guesses result in the drawing of a hangman figure and lose a life.
 Player is in a position of 5 lives at easy mode, 6 for medium, and 7 for hard mode activated.
@@ -91,6 +91,7 @@ Choose Difficulty by option 2 in the game menu:
 """
 
 
+
 endgamevis = """
 
 
@@ -101,5 +102,5 @@ endgamevis = """
 ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗    ╚██████╔╝ ╚████╔╝ ███████╗██║  ██║
  ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
                                                                           
-                                                                          
+
 """
