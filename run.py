@@ -132,11 +132,11 @@ def hangmanthegame(wordlist, lives):
 
 def gamemenu():
     """
+    Function to display the logo that includes welcome text,
+    Delay added for over all improvment in user experience.
     """
-# . . . . 
-# . . . . 
-# . . . . 
-# . . . . 
+    print(logo)
+    sleep(1)
 
 
 def play_game(selected_level, lives):
