@@ -24,10 +24,13 @@ CC = 'clear' if os.name == 'posix' else 'cls'
 
 
 
-def print_hangman():
+def print_hangman(lives):
     """
     Function to print the hangman graphics in order
     based on number of lives remaining.
+
+    Args: 
+     * lives (int): Remaining lives in game.
     """
     if 0 <= lives < len(HANGMAN_GRAPHICS): 
         print(HANGMAN_GRAPHICS[lives])
@@ -41,6 +44,12 @@ def retrieve_valid_word(wordlist):
     """
     Function that will retrieve a random word from the module(wordlist.py)
     Based on user choice or default quickplay(Easy-mode)
+
+    Arg: 
+    * wordlist (list): List of words, for random pick.
+
+    Return:
+    * str: The randomly selected word converted to lowercase letters.
     """
     secret_word = random.choice(wordlist)
     return word.lower()
@@ -52,10 +61,11 @@ def hangmanthegame(wordlist, lives):
     Function to play the game, will call other functions accordingly.
     
     Args: 
-    - wordlist: list of words for random selection.
+    * wordlist (list): List of words for random pick.
+    * lives (int): The number of lives remaining.
     
-    Returns:
-    - str: random selected word (conv. to lowercase)
+    Return:
+    * str: The random selected word (conv. to lowercase)
     """
     secret_word = retrieve_valid_word(wordlist) # Retrieves the word from wordlist.
     word_letters = set(secret_word) # Converting the word to set of letters. 
@@ -129,23 +139,28 @@ def gamemenu():
 # . . . . 
 
 
-def play_game():
+def play_game(selected_level, lives):
     """
-    Function to initialize the game by calling hangmanthegame().
+    Function will be called by game_options() -> snare_the_rope().
+
+    Args: 
+    * selected_level (int): Users selected difficulty level
+    * lives (int): The number of lives that matches with the users lvl choice.
     """
-# . . . . 
-# . . . . 
-# . . . . 
-# . . . . 
+    print("Get ready...\n")
+    sleep(1)
+    print("Hang in there, hangman crew fitting the snare just for YOU!\n")
+    sleep(2)
+    print("buuuh! Something something very scary...")
+    sleep(2)
+
 
 
 def description():
     """
+
     """
-# . . . . 
-# . . . . 
-# . . . . 
-# . . . . 
+
 
 
 
