@@ -32,7 +32,7 @@ def print_hangman():
     if 0 <= lives < len(HANGMAN_GRAPHICS): 
         print(HANGMAN_GRAPHICS[lives])
         else:
-            print("Invalid number of lives provided.")
+            print("Invalid number of lives provided.\n")
 
 
 
@@ -81,14 +81,14 @@ def hangmanthegame(wordlist, lives):
          underscores ___ for the user to guess if not letter is in word
          In that case the letter appends to the word. 
         """
-        print(f"Secret word: {' '.join(word_in_list)}")
+        print(f"Secret word: {' '.join(word_in_list)}\n")
 
         # Input for user to guess.
-        user_letter = input("Guess the letter: n").lower()
+        user_letter = input("Guess the letter: \n").lower()
 
         # Validate user input.
         if len(user_letter) != 1 or user_letter not in abc:
-            print("Invalid input. Please enter a single letter.")
+            print("Invalid input. Please enter a single letter.\n")
             continue
 
         # Check user input for already attempted letters.
@@ -97,7 +97,7 @@ def hangmanthegame(wordlist, lives):
             Are you looking for the snare?
             You have already used that character.
             Please try again. 
-            """)
+            \n""")
             else:
                 used_letters.add(user_letter)
 
@@ -115,12 +115,7 @@ def hangmanthegame(wordlist, lives):
         os.system(CC)
         print(endgamevis) # Visual imported from module.
         print(HANGMAN_GRAPHICS[6]) # Print last stage of hang man.
-        print(f"You ran out of lives. The word was: {word}")
-
-
-
-
-
+        print(f"You ran out of lives. The word was: {word}\n")
 
 
 
