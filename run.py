@@ -1,28 +1,31 @@
 # Importing Python standard libraries.
 
-from time import sleep # Sleep function from time module for adding delays between transitions.
-import os # Os module as clear function for wiping screen
-import string # String module to use ascii.lower for input validation
-import random # Random module to retrive a random word in the right difficulty cat.
+# Sleep function from time module for adding delays between transitions.
+from time import sleep
+# Os module as clear function for wiping screen
+import os
+# String module to use ascii.lower for input validation
+import string
+# Random module to retrive a random word in the right difficulty cat.
+import random
 
 # Importing my module (wordlist.py)
 
 from wordlist import (
-    easy_words, # 1/5 chance on a word with 4 letters
-    medium_words, # 1/5 chance on a word with 5-7 letters
-    hard_words, # 1/5 chance on a word with 8-11 letters
-    graphics, # the hangman drawing
-    logo, # Welcome logo with a welcome text (Welcome text used in imported files to align text)
-    endgamevis, # Game Over ascii art sign.
-    gamedescription # Game Description
+    easy_words,  # 1/5 chance on a word with 4 letters
+    medium_words,  # 1/5 chance on a word with 5-7 letters
+    hard_words,  # 1/5 chance on a word with 8-11 letters
+    graphics,  # the hangman drawing
+    logo,  # Welcome logo with a welcome text
+    endgamevis,  # Game Over ascii art sign.
+    gamedescription  # Game Description
 )
 
-# Declaring two global variables as of now. # # # 
+# Declaring two global variables as of now.
 EMOJI_LIVES = "❤️ "
 HANGMAN_GRAPHICS = graphics
-# Declaring variable for system clear to function Unix and Windows 
+# Declaring variable for system clear to function Unix and Windows
 CC = 'clear' if os.name == 'posix' else 'cls'
-
 
 
 def print_hangman(lives):
@@ -237,18 +240,22 @@ def difficulty():
         print("Invalid choice, Please try again. \n")
 
 
-
-
 def game_options():
     """
-    Function that will display game options to user and require input of choice.
+    Function that will display game options to user:
+    1 - Quick play on Easy mode preset default (5 lives)
+    2 - Difficulty options: Easy Medium Hard - selection for user.
+    3 - Game Description, Short consist description
+    4 - Terminate game
     """
     options = {
-        '1' : play_game,
-        '2' : difficulty,
-        '3' : description,
-        '4' : quit_game 
+        '1': play_game,
+        '2': difficulty,
+        '3': description,
+        '4': quit_game
     }
+
+
 while True:
     print("""
         1. Quickplay on Easy
@@ -266,15 +273,13 @@ while True:
             lives = 5
             selected_option(easy_words, lives)
         elif choice == '2':
-                selected_level, lives = difficulty()
-                play_game(selected_level, lives)
-                else: 
-                    selected_option()
-                    break
+            selected_level, lives = difficulty()
+            play_game(selected_level, lives)
+            else:
+                selected_option()
+                break
 
         print("Invalid choice. Please try again. \n")
-
-
 
 
 def snare_the_rope():
@@ -282,19 +287,12 @@ def snare_the_rope():
     ↓↑
     Function that ignites the game, starting with snaring the rope!
     This function is the heart, the engine, Go baby go button.
-    The entry point that initializes the app, 
+    The entry point that initializes the app,
     gamemenu()
     game_options()
     """
-     gamemenu()
-     game_options()
-     
-
+    gamemenu()
+    game_options()
 
     if __name__ == "__main__":
         snare_the_rope()
-
-
-
-
-
