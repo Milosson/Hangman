@@ -13,7 +13,8 @@ from wordlist import (
     hard_words, # 1/5 chance on a word with 8-11 letters
     graphics, # the hangman drawing
     logo, # Welcome logo with a welcome text (Welcome text used in imported files to align text)
-    endgamevis # Game Over ascii art sign.
+    endgamevis, # Game Over ascii art sign.
+    gamedescription # Game Description
 )
 
 # Declaring two global variables as of now. # # # 
@@ -53,45 +54,49 @@ def retrieve_valid_word(wordlist):
     return secret_word.lower()
 
 
-
 def hangmanthegame(wordlist, lives):
     """
     Function to play the game, will call other functions accordingly.
-    
-    Args: 
-    * wordlist (list): List of words for random pick.
-    * lives (int): The number of lives remaining.
-    
+
+    Args:
+        * wordlist (list): List of words for random pick.
+            * lives (int): The number of lives remaining.
+
     Return:
     * str: The random selected word (conv. to lowercase)
     """
-    secret_word = retrieve_valid_word(wordlist) # Retrieves the word from wordlist.
-    word_letters = set(secret_word) # Converting the word to set of letters. 
-    used_letters = set() # Set used letters as empty to store users guessed letters.
-    abc = set(string.acsii_lowercase) # Set of all alphabets to lowercase
+    # Retrieves the word from wordlist.
+    secret_word = retrieve_valid_word(wordlist)
+    # Converting the word to set of letters.
+    word_letters = set(secret_word)
+    # Set used letters as empty to store users guessed letters.
+    used_letters = set()
+    # Set of all alphabets to lowercase
+    abc = set(string.acsii_lowercase)
 
-    print_hangman(0) # Printing the initial hangman drawing at start of the game-round.
+    # Printing the initial hangman drawing at start of the game-round.
+    print_hangman(0)
 
     # Main game loop
     while word_letters and lives > 0:
         os.system(CC)
         # Display the current state (lives remaining - displayed as hearts)
         print(f"Lives {EMOJI_LIVES * lives}")
-        # Print the initial hangman drawing at start of game round.
-        print_hangman(0)
+        # Increment the hangman drawing based on failed attempts.
+        print_hangman(6 - lives)
         print(f"letter used: {' '.join(used_letters)}\n")
 
-      
         word_in_list = [
-            letter if letter in used_letters else '_ ' for letter in secret_word
-        ]   """
+         letter if letter in used_letters else '_ ' for letter in secret_word
+        ]
+        """
          Display the current word with a list comprehension we create
          underscores ___ for the user to guess if not letter is in word
-         In that case the letter appends to the word. 
+         In that case the letter appends to the word.
         """
         print(f"Secret word: {' '.join(word_in_list)}\n")
 
-        # Input for user to guess.
+        # Input for user's guess.
         user_letter = input("Guess the letter: \n").lower()
 
         # Validate user input.
@@ -104,25 +109,35 @@ def hangmanthegame(wordlist, lives):
             print("""
             Are you looking for the snare?
             You have already used that character.
-            Please try again. 
+            Please try again.
             \n""")
-            else:
-                used_letters.add(user_letter)
+            sleep(3)
+        else:
+            used_letters.add(user_letter)
 
-            # Check if user input is in the secret word.
-            if not word_letters:
-                os.system(CC)
-                print(
-                f"CONGRATUUUUULATIONAAAAZ!!!\n"
-                f"You are the winner! you had {lives} lives left.\n"
-                f"You guessed the word: {secret_word}\n"
-                )
-                break
-    # Game over -> Clear screen ->
+        # Check if user input is in the secret word.
+        if user_letter in word_letters:
+            word_letters.remove(user_letter)
+            print(f"""Correct! The letter {user_letter}
+            is included in the secret word""")
+        else:
+            lives -= 1
+            print("Incorrecet! You seem to be in a hurry for that snare.")
+            sleep(1.5)
+        if not word_letters:
+            os.system(CC)
+            print(
+                f"Congratulations!!!"
+                f"You guessed the word: {secret_word}"
+            )
+            print(f"You are the winner with {lives} remanining.")
+            break
+
+    # Game over -> Clear screen -> Display word -> Show end game visuals.
     if lives == 0:
         os.system(CC)
-        print(endgamevis) # Visual imported from module.
-        print(HANGMAN_GRAPHICS[6]) # Print last stage of hang man.
+        print(endgamevis)  # Visual imported from module.
+        print(HANGMAN_GRAPHICS[6])  # Print last stage of hang man.
         print(f"You ran out of lives. The word was: {word}\n")
 
 
