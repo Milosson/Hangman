@@ -141,8 +141,6 @@ def hangmanthegame(wordlist, lives):
         print(f"You ran out of lives. The word was: {word}\n")
 
 
-
-
 def gamemenu():
     """
     Function to display the logo that includes welcome text,
@@ -156,7 +154,7 @@ def play_game(selected_level, lives):
     """
     Function will be called by game_options() -> snare_the_rope().
 
-    Args: 
+    Args:
     * selected_level (int): Users selected difficulty level
     * lives (int): The number of lives that matches with the users lvl choice.
     """
@@ -168,27 +166,27 @@ def play_game(selected_level, lives):
     sleep(2)
 
 
-
 def description():
     """
-    Function that display the game description if user choose to do so 
-    as an option from game_options() -> the game description is imported 
-    from wordlist.py.
-    
-    'Enter' as a back to main menu option added. 
-    ↓ 
+    Function that display the game description if user choose to do so
+    as an option from game_options() -> the game description is imported
+    from wordlist.py
+
+    'Enter' as a back to main menu option added.
+    ↓
     Initialize gamemenu() and game_options()
 
-    Delays added for UX/UI.    
+    Delays added for UX/UI.
     """
-    print(gamedescription) # Prints the imported description from wordlist.
+    print(gamedescription)  # Prints the imported description from wordlist.
     sleep(1)
-    if input("Press enter to return to the main menu.\n") == "": # User has option to 'Enter' to return
-    sleep(1)
+    # User has option to 'Enter' to return
+    if input("Press enter to return to the main menu.\n") == "":
+        sleep(1)
     os.system(CC)
     sleep(1)
-    gamemenu() # After clear and some delay added the game menu will appear ↓
-    game_options() # and the options with it as on start of the game.
+    gamemenu()  # After clear and some delay added the game menu will appear ↓
+    game_options()  # and the options with it as on start of the game.
 
 
 
@@ -225,7 +223,7 @@ def difficulty():
             return selected_level, diff_lives
         
         os.system(CC)
-        print("Invalid choice, Please try again. \n")    
+        print("Invalid choice, Please try again. \n")
 
 
 
