@@ -14,7 +14,8 @@ from wordlist import (
     graphics,  # the hangman drawing index [0-6] 7-drawing stages.
     logo,  # Welcome logo with a welcome text
     endgamevis,  # Game Over ASCII art sign.
-    gamedescription  # Game Description for Option 3.
+    gamedescription,  # Game Description for Option 3.
+    RC, GC, YC, RS  # Colors imported Red, Green, Yellow, Reset
 )
 
 # Global variables.
@@ -22,11 +23,6 @@ EMOJI_LIVES = "❤️ "
 HANGMAN_GRAPHICS = graphics
 # Declaring variable for system clear to function Unix and Windows
 CC = 'clear' if os.name == 'posix' else 'cls'
-# Declaring global variables for colors
-RC = "\u001b[31m"  # Red
-GC = "\u001b[32m"  # Green
-YC = "\u001b[33m"  # Yellow
-RS = "\033[0m"  # Reset
 
 
 def print_hangman(lives):
@@ -248,7 +244,7 @@ def game_options():
     Function that will display game options to user:
     1 - Quick play on Easy mode preset default (5 lives)
     2 - Difficulty options: Easy Medium Hard - selection for user.
-    3 - Game Description, Short consist description
+    3 - Game Description, Short and concise description
     4 - Terminate game
     """
     options = {

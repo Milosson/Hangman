@@ -1,3 +1,9 @@
+RC = "\u001b[31m"  # Red
+GC = "\u001b[32m"  # Green
+YC = "\u001b[33m"  # Yellow
+RS = "\033[0m"  # Reset
+
+
 easy_words = ["hello", "apple", "smile", "happy", "blue"]
 
 medium_words = ["guitar", "breeze", "puzzle", "laughter", "sunshine"]
