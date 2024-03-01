@@ -27,32 +27,30 @@ CC = 'clear' if os.name == 'posix' else 'cls'
 def print_hangman(lives):
     """
     Function to print the hangman graphics in order
-    based on number of lives remaining.
+    based on the number of lives remaining.
 
-    Args: 
-     * lives (int): Remaining lives in game.
+    Args:
+      * lives (int): Remaining lives in the game.
     """
-    if 0 <= lives < len(HANGMAN_GRAPHICS): 
+    if 0 <= lives < len(HANGMAN_GRAPHICS):
         print(HANGMAN_GRAPHICS[lives])
-        else:
-            print("Invalid number of lives provided.\n")
-
-
+    else:
+        print("Invalid number of lives provided.\n")
 
 
 def retrieve_valid_word(wordlist):
     """
-    Function that will retrieve a random word from the module(wordlist.py)
+    Function that will retrieve a random word from the module (wordlist.py)
     Based on user choice or default quickplay(Easy-mode)
 
-    Arg: 
+    Arg:
     * wordlist (list): List of words, for random pick.
 
     Return:
     * str: The randomly selected word converted to lowercase letters.
     """
     secret_word = random.choice(wordlist)
-    return word.lower()
+    return secret_word.lower()
 
 
 
@@ -227,6 +225,13 @@ def game_options():
         '3' : description,
         '4' : quit_game 
     }
+while True:
+    print("""
+        1. Quickplay on Easy
+        2. Difficulty options
+        3. Game description
+        4. Quit
+        """)
 
     choice = input("Enter your choice by number:  \n")
     selected_option = options.get(choice)
@@ -236,9 +241,9 @@ def game_options():
         if choice == '1':
             lives = 5
             selected_option(easy_words, lives)
-            elif choice == '2':
+        elif choice == '2':
                 selected_level, lives = difficulty()
-                play_game(selected, lives)
+                play_game(selected_level, lives)
                 else: 
                     selected_option()
                     break
@@ -256,7 +261,7 @@ def quit_game():
     """
     exit_game = 4
     print("Exiting the game, Hangbye!")
-    return 4
+    return exit_game
 
 
 
@@ -269,9 +274,9 @@ def snare_the_rope():
     gamemenu()
     game_options()
     """
-     # gamemenu()
-     # game_options()
-     pass
+     gamemenu()
+     game_options()
+     
 
 
     if __name__ == "__main__":
