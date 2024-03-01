@@ -1,6 +1,6 @@
 # Importing Python standard libraries.
 
-from time import sleep 
+from time import sleep
 import os
 import string
 import random
@@ -22,12 +22,11 @@ EMOJI_LIVES = "❤️ "
 HANGMAN_GRAPHICS = graphics
 # Declaring variable for system clear to function Unix and Windows
 CC = 'clear' if os.name == 'posix' else 'cls'
-# Declaring global variables for colors 
-RC = "\u001b[31m" #Red
-GC = "\u001b[32m" #Green
-YC = "\u001b[33m" #Yellow
-RS = "\033[0m" #Reset
-
+# Declaring global variables for colors
+RC = "\u001b[31m"  # Red
+GC = "\u001b[32m"  # Green
+YC = "\u001b[33m"  # Yellow
+RS = "\033[0m"  # Reset
 
 
 def print_hangman(lives):
@@ -123,10 +122,10 @@ def hangmanthegame(wordlist, lives):
         # Check if user input is in the secret word.
         if user_letter in word_letters:
             word_letters.remove(user_letter)
-            print(f"{GC}Correct! The letter {user_letter} is in the secret word{RS}")
+            print(f"{GC}Correct! {user_letter} is in the secret word{RS}")
         else:
             lives -= 1
-            print("{RC}Incorrect! You seem to be in a hurry for that snare.{RS}")
+            print("{RC}Incorrect! Are you in a hurry for that snare?{RS}")
             sleep(1.5)
 
         if not word_letters:
@@ -219,10 +218,10 @@ def difficulty():
             '2': (medium_words, 6),
             '3': (hard_words, 7)
         }
-        print({YC}
-            "1 : Easy\n",
-            "2 : Medium\n",
-            "3 : Hard\n"{RS}
+        print(
+            f"{YC}1 : Easy\n",
+            f"2 : Medium\n",
+            f"3 : Hard\n{RS}"
         )
         # User input for difficulty.
         choice = input("Enter your choice by number: \n")
@@ -299,4 +298,3 @@ def snare_the_rope():
 
 if __name__ == "__main__":
     snare_the_rope()
-
