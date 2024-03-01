@@ -221,7 +221,7 @@ def difficulty():
         }
         print({YC}
             "1 : Easy\n",
-            "2 : Medium\n"
+            "2 : Medium\n",
             "3 : Hard\n"{RS}
         )
         # User input for difficulty.

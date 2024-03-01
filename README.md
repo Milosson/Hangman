@@ -4,8 +4,15 @@
 
 ## Project description
 
-Describing the project, the game itself and some thoughts included.
+Welcome to Hangman game - Snare the Rope Edition.
+This Python console-based game brings back the classic to life with a touch of humor and suspense.
+Challenge yourself to either guess the secret word, or get hung while learning how to spell!
 
+Your are limited with lives based on the choice of difficulty, do you dare......?
+The used letters will append to remember you how close you are to the gallow! or not...
+Victory or defeat, will you triumph or meet a ropey fate?
+
+Lets diiiiive in! It will be a snare-tastic adventure!
 
 <summary><h2>Table of Contents</h2><br>
 <details><summary><span style="background-color: #0000FF">Click to preview content</span></summary>
