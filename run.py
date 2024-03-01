@@ -189,6 +189,13 @@ def description():
     game_options()  # and the options with it as on start of the game.
 
 
+def quit_game():
+    """
+    Function to terminate application.
+    """
+    exit_game = 4
+    print("Exiting the game, Hangbye!")
+    return exit_game
 
 
 def difficulty():
@@ -267,18 +274,6 @@ while True:
 
         print("Invalid choice. Please try again. \n")
 
-
-
-
-
-
-def quit_game():
-    """
-    Function to terminate application.
-    """
-    exit_game = 4
-    print("Exiting the game, Hangbye!")
-    return exit_game
 
 
 
