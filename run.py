@@ -192,10 +192,9 @@ def quit_game():
     """
     Function to terminate application.
     """
-# . . . . 
-# . . . . 
-# . . . . 
-# . . . . 
+    exit_game = 4
+    print("Exiting the game, Hangbye!")
+    return 4
 
 
 
@@ -210,6 +209,8 @@ def snare_the_rope():
     """
      # gamemenu()
      # game_options()
+     pass
+
 
     if __name__ == "__main__":
         snare_the_rope()
