@@ -17,11 +17,17 @@ from wordlist import (
     gamedescription  # Game Description for Option 3.
 )
 
-# Declaring two global variables as of now.
+# Global variables.
 EMOJI_LIVES = "❤️ "
 HANGMAN_GRAPHICS = graphics
 # Declaring variable for system clear to function Unix and Windows
 CC = 'clear' if os.name == 'posix' else 'cls'
+# Declaring global variables for colors 
+RC = "\u001b[31m" #Red
+GC = "\u001b[32m" #Green
+YC = "\u001b[33m" #Yellow
+RS = "\033[0m" #Reset
+
 
 
 def print_hangman(lives):
@@ -81,10 +87,10 @@ def hangmanthegame(wordlist, lives):
 
         os.system(CC)
         # Display the current state (lives remaining - displayed as hearts)
-        print(f"Lives {EMOJI_LIVES * lives}")
+        print(f"{GC}Lives {EMOJI_LIVES * lives}{RS}")
         # Increment the hangman drawing based on failed attempts.
         print_hangman(6 - lives)
-        print(f"letters used: {' '.join(used_letters)}\n")
+        print(f"{YC}letters used: {' '.join(used_letters)}{RS}\n")
 
         word_in_list = [
          letter if letter in used_letters else '_ ' for letter in secret_word
@@ -94,22 +100,22 @@ def hangmanthegame(wordlist, lives):
         underscores ___ for the user to guess if not letter is in word
         In that case the letter appends to the word.
         """
-        print(f"Secret word: {' '.join(word_in_list)}\n")
+        print(f"{YC}Secret word: {' '.join(word_in_list)}{RS}\n")
 
         # Input for the user to guess.
-        user_letter = input("Guess the letter: \n").lower()
+        user_letter = input("{YC}Guess the letter: {RS}\n").lower()
 
         # Validate user input.
         if len(user_letter) != 1 or user_letter not in abc:
-            print("Invalid input. Please enter a single letter.\n")
+            print("{RC}Invalid input. Please enter a single letter.{RS}\n")
             continue
 
         # Check user input for already attempted letters.
         if user_letter in used_letters:
-            print("""
+            print("""{RC}
             Are you looking for the snare?
             You have already used that character.
-            Please try again.
+            Please try again.{RS}
             \n""")
         else:
             used_letters.add(user_letter)
@@ -117,19 +123,19 @@ def hangmanthegame(wordlist, lives):
         # Check if user input is in the secret word.
         if user_letter in word_letters:
             word_letters.remove(user_letter)
-            print(f"Correct! The letter {user_letter} is in the secret word")
+            print(f"{GC}Correct! The letter {user_letter} is in the secret word{RS}")
         else:
             lives -= 1
-            print("Incorrect! You seem to be in a hurry for that snare.")
+            print("{RC}Incorrect! You seem to be in a hurry for that snare.{RS}")
             sleep(1.5)
 
         if not word_letters:
             os.system(CC)
             print(
-                f"Congratulations!!!"
-                f"You guessed the word: {secret_word}"
+                f"{GC}Congratulations!!!{RS}"
+                f"You guessed the word: {GC}{secret_word}{RS}"
                 )
-            print(f"You are the winner with {lives} remaining.")
+            print(f"You survived the gallow with {lives} remaining.")
             break
 
     # Game over -> Clear screen -> Display word - Show end game visuals.
@@ -137,7 +143,7 @@ def hangmanthegame(wordlist, lives):
         os.system(CC)
         print(endgamevis)  # Visual imported from module.
         print(HANGMAN_GRAPHICS[6])  # Print the last stage of hangman.
-        print(f"You ran out of lives. The word was: {secret_word}\n")
+        print(f"You ran out of lives. The word was: {GC}{secret_word}{RS}\n")
 
 
 def gamemenu():
@@ -213,10 +219,10 @@ def difficulty():
             '2': (medium_words, 6),
             '3': (hard_words, 7)
         }
-        print(
+        print({YC}
             "1 : Easy\n",
             "2 : Medium\n"
-            "3 : Hard\n"
+            "3 : Hard\n"{RS}
         )
         # User input for difficulty.
         choice = input("Enter your choice by number: \n")
@@ -229,8 +235,8 @@ def difficulty():
         selected_level, diff_lives = levels.get(choice, (None, None))
         if selected_level is not None:
             print(
-                f"You have chosen difficulty level: {choice}"
-                f"You will start with lives: {diff_lives} ❤️"
+                f"{YC}You have chosen difficulty level:{RS} {choice}"
+                f"{YC}You will start with lives:{RS} {diff_lives} ❤️"
             )
             return selected_level, diff_lives
             # Invalid input msg.
@@ -254,11 +260,11 @@ def game_options():
     }
 
     while True:
-        print("""
+        print(f"""{YC}
         1. Quickplay on Easy mode
         2. Difficulty Options
         3. Game Description
-        4. Exit
+        4. Exit{RS}
         """)
         choice = input("Enter your choice by number:  \n")
         selected_option = options.get(choice)
