@@ -181,10 +181,32 @@ def game_options():
     2. Medium ( 6-8 Letter word and 6 lives )
     3. Hard ( 8-11 Letter word and 7 lives )
     """
-# . . . . 
-# . . . . 
-# . . . . 
-# . . . . 
+    options = {
+        '1' : play_game,
+        '2' : difficulty,
+        '3' : description
+        '4' : quit_game 
+    }
+
+    choice = input("Enter your choice by number:  \n")
+    selected_option = options.get(choice)
+
+    # Validate user's choice.
+    if selected_option:
+        if choice == '1':
+            lives = 5
+            selected_option(easy_words, lives)
+            elif choice == '2':
+                selected_level, lives = difficulty()
+                play_game(selected, lives)
+                else: 
+                    selected_option()
+                    break
+
+        print("Invalid choice. Please try again. \n")
+
+
+
 
 
 
