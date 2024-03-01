@@ -81,9 +81,13 @@ __ __  ____ ____   ____      ___ ___  ____ ____
 """
 
 gamedescription = f"""
-Hangman is a word-guessing game where players try to guess a hidden word one letter at a time.
+Hangman is a word-guessing game where players try to guess a hidden word
+one letter at a time.
 Incorrect guesses result in the drawing of a hangman figure and lose a life.
-Player is in a position of 5 lives at easy mode, 6 for medium, and 7 for hard mode activated.
+Player is in a position of:{GC}
+ 5 lives at Easy mode 
+ 6 for medium 
+ 7 for hard mode activated.{RS}
 
 Quick play by choosing option 1 (Default level: {GC}Easy{RS})
 

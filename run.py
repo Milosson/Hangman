@@ -98,16 +98,16 @@ def hangmanthegame(wordlist, lives):
         print(f"{YC}Secret word: {' '.join(word_in_list)}{RS}\n")
 
         # Input for the user to guess.
-        user_letter = input("{YC}Guess the letter: {RS}\n").lower()
+        user_letter = input(f"{YC}Guess the letter: {RS}\n").lower()
 
         # Validate user input.
         if len(user_letter) != 1 or user_letter not in abc:
-            print("{RC}Invalid input. Please enter a single letter.{RS}\n")
+            print(f"{RC}Invalid input. Please enter a single letter.{RS}\n")
             continue
 
         # Check user input for already attempted letters.
         if user_letter in used_letters:
-            print("""{RC}
+            print(f"""{RC}
             Are you looking for the snare?
             You have already used that character.
             Please try again.{RS}
@@ -119,10 +119,11 @@ def hangmanthegame(wordlist, lives):
         if user_letter in word_letters:
             word_letters.remove(user_letter)
             print(f"{GC}Correct! {user_letter} is in the secret word{RS}")
+            sleep(3)
         else:
             lives -= 1
-            print("{RC}Incorrect! Are you in a hurry for that snare?{RS}")
-            sleep(1.5)
+            print(f"{RC}Incorrect! Are you in a hurry for that snare?{RS}")
+            sleep(3)
 
         if not word_letters:
             os.system(CC)
