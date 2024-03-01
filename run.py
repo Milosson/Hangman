@@ -141,7 +141,7 @@ def hangmanthegame(wordlist, lives):
         os.system(CC)
         print(endgamevis)  # Visual imported from module.
         print(HANGMAN_GRAPHICS[6])  # Print last stage of hang man.
-        print(f"You ran out of lives. The word was: {word}\n")
+        print(f"You ran out of lives. The word was: {secret_word}\n")
 
 
 def gamemenu():
@@ -167,6 +167,7 @@ def play_game(selected_level, lives):
     sleep(2)
     print("buuuh! Something something very scary...")
     sleep(2)
+    hangmanthegame(selected_level, lives)
 
 
 def description():
@@ -248,7 +249,8 @@ def game_options():
     3 - Game Description, Short consist description
     4 - Terminate game
     """
-    options = {
+
+options = {
         '1': play_game,
         '2': difficulty,
         '3': description,
@@ -275,9 +277,9 @@ while True:
         elif choice == '2':
             selected_level, lives = difficulty()
             play_game(selected_level, lives)
-            else:
-                selected_option()
-                break
+        else:
+            selected_option()
+        break
 
         print("Invalid choice. Please try again. \n")
 
