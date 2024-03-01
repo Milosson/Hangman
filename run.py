@@ -75,7 +75,7 @@ def hangmanthegame(wordlist, lives):
     # Set used letters as empty to store users guessed letters.
     used_letters = set()
     # Set of all alphabets to lowercase
-    abc = set(string.acsii_lowercase)
+    abc = set(string.ascii_lowercase)
 
     # Printing the initial hangman drawing at start of the game-round.
     print_hangman(0)
@@ -240,7 +240,6 @@ def difficulty():
         os.system(CC)
         print("Invalid choice, Please try again. \n")
 
-
 def game_options():
     """
     Function that will display game options to user:
@@ -249,39 +248,30 @@ def game_options():
     3 - Game Description, Short consist description
     4 - Terminate game
     """
+    options = {'1': play_game, '2': difficulty, '3': description, '4': quit_game}
 
-options = {
-        '1': play_game,
-        '2': difficulty,
-        '3': description,
-        '4': quit_game
-    }
-
-
-while True:
-    print("""
-        1. Quickplay on Easy
-        2. Difficulty options
-        3. Game description
-        4. Quit
+    while True:
+        print("""
+        1.Quickplay on Easy
+        2. Difficulty Options
+        3. Game Description
+        4. Exit
         """)
+        choice = input("Enter your choice by number: \n")
+        selected_option = options.get(choice)
 
-    choice = input("Enter your choice by number:  \n")
-    selected_option = options.get(choice)
+        if selected_option:
+            if choice == '1':
+                lives = 5
+                selected_option(easy_words, lives)
+            elif choice == '2':
+                selected_level, lives = difficulty()
+                play_game(selected_level, lives)
+            else:
+                selected_option()
+            break
+        print("Invalid choice. Please try again")
 
-    # Validate user's choice.
-    if selected_option:
-        if choice == '1':
-            lives = 5
-            selected_option(easy_words, lives)
-        elif choice == '2':
-            selected_level, lives = difficulty()
-            play_game(selected_level, lives)
-        else:
-            selected_option()
-        break
-
-        print("Invalid choice. Please try again. \n")
 
 
 def snare_the_rope():
