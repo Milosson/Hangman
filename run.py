@@ -168,10 +168,16 @@ def difficulty():
     """
     Function to give user choices of various difficulty levels.
     """
-# . . . . 
-# . . . . 
-# . . . . 
-# . . . . 
+    print(gamedescription) # Prints the imported description from wordlist.
+    sleep(1)
+    if input("Press enter to return to the main menu.\n") == "": # User has option to 'Enter' to return
+        sleep(1) 
+        os.system(CC)
+        sleep(1)
+        gamemenu() # After clear and some delay added the game menu will appear ↓
+        game_options() # and the options with it as on start of the game.
+
+
 
 
 def game_options():
@@ -236,6 +242,7 @@ def snare_the_rope():
 
     if __name__ == "__main__":
         snare_the_rope()
+
 
 
 
