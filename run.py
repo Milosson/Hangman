@@ -158,8 +158,24 @@ def play_game(selected_level, lives):
 
 def description():
     """
+    Function that display the game description if user choose to do so 
+    as an option from game_options() -> the game description is imported 
+    from wordlist.py.
+    
+    'Enter' as a back to main menu option added. 
+    ↓ 
+    Initialize gamemenu() and game_options()
 
+    Delays added for UX/UI.    
     """
+    print(gamedescription) # Prints the imported description from wordlist.
+    sleep(1)
+    if input("Press enter to return to the main menu.\n") == "": # User has option to 'Enter' to return
+    sleep(1)
+    os.system(CC)
+    sleep(1)
+    gamemenu() # After clear and some delay added the game menu will appear ↓
+    game_options() # and the options with it as on start of the game.
 
 
 
@@ -167,15 +183,11 @@ def description():
 def difficulty():
     """
     Function to give user choices of various difficulty levels.
+    1. Easy ( 4 Letter word and 5 lives )
+    2. Medium ( 6-8 Letter word and 6 lives )
+    3. Hard ( 8-11 Letter word and 7 lives )
     """
-    print(gamedescription) # Prints the imported description from wordlist.
-    sleep(1)
-    if input("Press enter to return to the main menu.\n") == "": # User has option to 'Enter' to return
-        sleep(1) 
-        os.system(CC)
-        sleep(1)
-        gamemenu() # After clear and some delay added the game menu will appear ↓
-        game_options() # and the options with it as on start of the game.
+    
 
 
 
@@ -183,14 +195,11 @@ def difficulty():
 def game_options():
     """
     Function that will display game options to user and require input of choice.
-    1. Easy ( 4 Letter word and 5 lives )
-    2. Medium ( 6-8 Letter word and 6 lives )
-    3. Hard ( 8-11 Letter word and 7 lives )
     """
     options = {
         '1' : play_game,
         '2' : difficulty,
-        '3' : description
+        '3' : description,
         '4' : quit_game 
     }
 
