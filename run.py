@@ -187,7 +187,32 @@ def difficulty():
     2. Medium ( 6-8 Letter word and 6 lives )
     3. Hard ( 8-11 Letter word and 7 lives )
     """
-    
+     while True:
+        print("Make your choice carefully, your life may hang on it!\n")
+        levels = {
+            '1' : (easy_words, 5)
+            '2' : (medium_words, 6)
+            '3' : (hard_words, 7)
+        }    
+        print(
+            "1 : Easy\n",
+            "2 : Medium\n"
+            "3 : Hard\n"
+        )
+        choice = input("Enter your choice by number: \n")
+
+        # Validate user choice.
+
+        selected_level, diff_lives = levels.get(choice, (None, None))
+        if selected_level is not None:
+            print(
+                f"You have chosen difficulty level: {choice}"
+                f"You will start with lives: {diff_lives} ❤️"
+            )
+            return selected_level, diff_lives
+        
+        os.system(CC)
+        print("Invalid choice, Please try again. \n")    
 
 
 
