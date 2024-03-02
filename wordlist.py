@@ -84,10 +84,13 @@ gamedescription = f"""
 Hangman is a word-guessing game where players try to guess a hidden word
 one letter at a time.
 Incorrect guesses result in the drawing of a hangman figure and lose a life.
-Player is in a position of:{GC}
- 5 lives at Easy mode 
- 6 for medium 
- 7 for hard mode activated.{RS}
+Player is in a position of a difficulty option:
+
+ Easy with 5 ❤️❤️❤️❤️❤️
+
+ Medium with 6 ❤️❤️❤️❤️❤️❤️
+
+ Hard with 7 ❤️❤️❤️❤️❤️❤️❤️
 
 Quick play by choosing option 1 (Default level: {GC}Easy{RS})
 
@@ -113,4 +116,15 @@ endgamevis = f"""{RC}
       ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝     ╚═════╝   ╚═══╝  ╚══════╝╚═╝  ╚═╝
                                                                           
 
+{RS}"""
+
+winnerlogo = f"""{GC}
+
+ __          ___                       
+ \ \        / (_)                      
+  \ \  /\  / / _ _ __  _ __   ___ _ __ 
+   \ \/  \/ / | | '_ \| '_ \ / _ \ '__|
+    \  /\  /  | | | | | | | |  __/ |   
+     \/  \/   |_|_| |_|_| |_|\___|_|   
+  
 {RS}"""

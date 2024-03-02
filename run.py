@@ -15,7 +15,8 @@ from wordlist import (
     logo,  # Welcome logo with a welcome text
     endgamevis,  # Game Over ASCII art sign.
     gamedescription,  # Game Description for Option 3.
-    RC, GC, YC, RS  # Colors imported Red, Green, Yellow, Reset
+    RC, GC, YC, RS,  # Colors imported Red, Green, Yellow, Reset
+    winnerlogo  # Winner logo!!
 )
 
 # Global variables.
@@ -131,8 +132,21 @@ def hangmanthegame(wordlist, lives):
                 f"{GC}Congratulations!!!{RS}"
                 f"You guessed the word: {GC}{secret_word}{RS}"
                 )
-            print(f"You survived the gallow with {lives} remaining.")
-            break
+            print(winnerlogo)
+            print(f"You survived the gallow with {lives} ❤️ remaining.")
+            sleep(2)
+            while True:
+                replay = input("Return to main menu press 1, exit press 2. \n")
+                if replay == '1':
+                    os.system(CC)
+                    gamemenu()
+                    game_options()
+                break
+                elif replay == '2':
+                    quit_game()
+                break
+                else:
+                    print("Invalid option, either 1 or 2.")
 
     # Game over -> Clear screen -> Display word - Show end game visuals.
     if lives == 0:
@@ -140,6 +154,18 @@ def hangmanthegame(wordlist, lives):
         print(endgamevis)  # Visual imported from module.
         print(HANGMAN_GRAPHICS[6])  # Print the last stage of hangman.
         print(f"You ran out of lives. The word was: {GC}{secret_word}{RS}\n")
+        while True:
+            replay = input("Return to main menu press 1, exit press 2. \n")
+            if replay == '1':
+                os.system(CC)
+                gamemenu()
+                game_options()
+                break
+            elif replay == '2':
+                quit_game()
+                break
+            else:
+                print("Invalid option, either 1 or 2.")
 
 
 def gamemenu():
