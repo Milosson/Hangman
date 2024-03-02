@@ -1,7 +1,7 @@
 # HANG MAN 𓍯 
 
 ## A SNARE-TASTIC GAME
-![Game Img Mockup](/assets/pythonsnippet.JPG)
+![Game Img Mockup](/assets/images/pythonsnippet.JPG)
 
 ## Project description
 
@@ -18,16 +18,17 @@ Lets diiiiive in! It will be a snare-tastic adventure!
 <h2>Table of Contents</h2><br>
 <details><summary><span style="background-color: #0000FF">Click to preview content</span></summary><br>
 
-* Features
- - Future features
-* Techonologies used
-* Testing
-* Flowchart
-* Deployment
-* Support information
-* Credits / Acknowledgements
-* License
-* Bidding Adieu / Conclusion
+* [Features](#features)
+  - [Future Features](#future-features)
+* [Technologies](#technologies)
+* [Testing](#testing)
+* [Flowchart](#flowchart)
+* [Deployment](#deployment)
+* [Support Information](#support-information)
+* [Credits / Acknowledgements](#credits--acknowledgements)
+* [License](#license)
+* [Bidding Adieu](#bidding-adieu)
+
 
 </details>
 
@@ -175,7 +176,58 @@ Lets diiiiive in! It will be a snare-tastic adventure!
    </details>
 
 ## Testing
-ADD TESTING
+Validation through [CI Python Linter](https://pep8ci.herokuapp.com/#)<br>
+Initially, I encountered various linter and whitespace issues, which I resolved during local testing and in my IDE. The final result adheres to PEP8 standards, with no errors remaining.
+<details><summary> CI-Python Linter Img.1</summary>
+
+![Linter1](/assets/images/linter1.JPG)
+</details>
+<details><summary> CI-Python Linter Img.2</summary>
+
+![Linter1](/assets/images/linter2.JPG)
+</details>
+<details><summary> CI-Python Linter Img.3</summary>
+
+![Linter1](/assets/images/linter3.JPG)
+</details>
+<details><summary> CI-Python Linter Img.4</summary>
+
+![Linter1](/assets/images/linter4.JPG)
+</details>
+<br>
+
+
+
+### 1. First-time User Experience
+
+| **Feature**                        | **Action**                                   | **Expected Result**                         | **Actual Result**                         |
+| -----------------------------------| ---------------------------------------------| ------------------------------------------| ----------------------------------------|
+| Increase delay for invalid input    | User encounters invalid input                | Improved delay for better user experience  | Works as expected                         |
+
+### 2. Improved Text Display
+
+| **Feature**                        | **Action**                                   | **Expected Result**                         | **Actual Result**                         |
+| -----------------------------------| ---------------------------------------------| ------------------------------------------| ----------------------------------------|
+| Increase delay for info text        | User encounters info text                    | Improved delay for better user experience  | Works as expected                         |
+
+### 3. Visual Output and Text Enhancement
+
+| **Feature**                        | **Action**                                   | **Expected Result**                         | **Actual Result**                         |
+| -----------------------------------| ---------------------------------------------| ------------------------------------------| ----------------------------------------|
+| Display and align text and color    | Scuffed coloring and text without alignment | Better-optimized color scheme and less clutter  | Works as expected                   |
+
+### 4. User-Requested Replay Button
+
+| **Feature**                        | **Action**                                   | **Expected Result**                         | **Actual Result**                         |
+| -----------------------------------| ---------------------------------------------| ------------------------------------------| ----------------------------------------|
+| Display Replay Button               | User requests a replay option                | Replay button displayed for better user experience | Works as expected                   |
+
+### 5. Winner Screen Addition
+
+| **Feature**                        | **Action**                                   | **Expected Result**                         | **Actual Result**                         |
+| -----------------------------------| ---------------------------------------------| ------------------------------------------| ----------------------------------------|
+| Winner Screen                       | User requests a winner screen at the end     | Winner screen displayed for a celebratory end of the game | Works as expected                   |
+
 
 ## Flowchart
 <details><summary>Flowchart</summary>
