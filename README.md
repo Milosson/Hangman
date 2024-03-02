@@ -1,182 +1,165 @@
-# THE HANGMAN GAME !
+# HANG MAN 𓍯 
 
-## MOCKUP - Visual <- INSERT IMG ->
+## A SNARE-TASTIC GAME
+![Game Img Mockup](/assets/pythonsnippet.JPG)
 
 ## Project description
 
-Welcome to Hangman game - Snare the Rope Edition.
-This Python console-based game brings back the classic to life with a touch of humor and suspense.
-Challenge yourself to either guess the secret word, or get hung while learning how to spell!
+Welcome to Hangman game - Snare the Rope Edition.<br>
+This Python console-based game brings back the classic to life with a touch of humor and suspense.<br>
+Challenge yourself to either guess the secret word letter by letter, or get hung while learning how to spell and guess!
 
-Your are limited with lives based on the choice of difficulty, do you dare......?
-The used letters will append to remember you how close you are to the gallow! or not...
+Your are limited with lives based on the choice of difficulty, dare you......?<br>
+The used letters will append to remember you how close you are to the gallow! or not...<br>
 Victory or defeat, will you triumph or meet a ropey fate?
 
 Lets diiiiive in! It will be a snare-tastic adventure!
 
-<summary><h2>Table of Contents</h2><br>
-<details><summary><span style="background-color: #0000FF">Click to preview content</span></summary>
+<h2>Table of Contents</h2><br>
+<details><summary><span style="background-color: #0000FF">Click to preview content</span></summary><br>
 
-<details>
-<summary><h3>User Experience</h3></summary>
-
- Content for the "User Experience" 
-
-</details>
-
-<details>
-<summary><h3>Features</h3></summary>
-
-Content for the "Features" 
-
-</details>
-
-<details>
-<summary><h3>Existing Features (visuals)</h3></summary>
-
- Content for the "Existing Features (visuals)" 
-</details>
-
-<details>
-<summary><h3>My Flowchart (visual)</h3></summary>
-
- Content for the "My Flowchart (visual)" 
+* Features
+ - Future features
+* Techonologies used
+* Testing
+* Flowchart
+* Deployment
+* Support information
+* Credits / Acknowledgements
+* License
+* Bidding Adieu / Conclusion
 
 </details>
 
-<details>
-<summary><h3>Testing Python Linter (Visual)</h3></summary>
-
- Content for the "Testing Python Linter (Visual)
-
-</details>
-
-<details>
-<summary><h3>Manual testing (Seperate / Visual)</h3></summary>
-
-Content for the "Manual testing (Seperate / Visual)
-
-</details>
-
-<details>
-<summary><h3>Fixed bugs</h3></summary>
-
-Content for the "Fixed bugs" 
-
-</details>
-
-<details>
-<summary><h3>Deployment</h3></summary>
-
-   - <details>
-     <summary><h4>i. Heroku</h4></summary>
-
-     Content for the "i. Heroku
-
-     </details>
-
-   - <details>
-     <summary><h4>ii. GitHub Repo clone</h4></summary>
-
-     Content for the "ii. GitHub Repo clone"
-
-     </details>
-
-   - <details>
-     <summary><h4>iii. Forking the GitHub</h4></summary>
-
-    Content for the iii. Forking the GitHub
-
-     </details>
-
-</details>
-
-<details>
-<summary><h3>Technologies, Libraries, Framework & Other programs used</h3></summary>
-
-Content for the "Technologies, Libraries, Framework & Other programs used
-
-</details>
-
-<details>
-<summary><h3>Credits</h3></summary>
-
-Content for the "Credits
-
-</details>
-
-<details>
-<summary><h3>License</h3></summary>
-
- Content for the "License"
-
-</details>
-
-<details>
-<summary><h3>Acknowledgment</h3></summary>
-
- Content for the "Acknowledgment
-
-</details>
-
-<details>
-<summary><h3>Bidding Adieu</h3></summary>
-
-BIIIIIG THANKS AND BIG BYE! 
-
-</details>
-</details>
-
-
-## User Experience
-
-Color Scheme.
-
-First time user.
-Returning visitor.
-Frequent user.
-
-## Features 
-
-Existing: Visiual showcase with explaining text to image for various stages in  the game
-Future Features: additions in the future, developing the game, 
-
-## Flowchart
-
-Visual showcase
-
-## Testing 
-
- CI Python linter function testing. Visuals
- ### manual testing - Show criteria table
-
-## Fixed bugs
-Show criteria table 
-
-## Deployment 
-- Heroku deployment
-- Clone the GitHub repo
-- Forking the GitHub repo
+## Features
+   <h5> Future features</h5>
 
 ## Technologies
  - Python 3.12.2 - Game logics core language for this project<br>
  - GitHub Git version 2.43.2 - Version control platform for hosting the project.<br>
  - Heroku - Deployment platform for this project.
  - README.md - The markdown file including all project documentations.<br>
- - Replit and VScode as testing ground both local and IDE while.
+ - Replit and VScode as testing ground both local and IDE.
  - Cacoo for flowchart
  - Am I Responsive for the mockups.
- - CI Python Linter for validation of code and functionality.
+ - CI Python Linter for validation of code.
  <br><details><summary>Modules</summary>
    - random<br>
    - os<br>
    - string<br>
    - time<br>
-   - Wordlist (words, graphics, welcometxt, gameovervisual)<br>
+   - Wordlist.py
+      * easy_words
+      * medium_words
+      * hard_words
+      * logo
+      * graphics
+      * gamedescriptions
+      * endgamevis
    </details>
+
+## Testing
+ADD TESTING
+
+## Flowchart
+<details><summary>Flowchart</summary>
+
+![Flowchart image](/assets/images/Flowchart1.png)
+
+</details>
+
+## Deployment 
+<details><summary>Heroku Deployment</summary><br>
+
+i. Create or log in to your account at [Heroku](www.heroku.com).
+
+ii. Click 'New' -> 'Create new app'.
+
+iii. Type in the app name (the-hangman) -> select the region -> 'Create app'.
+
+iv. Navigate to the 'Settings' tab.
+
+v. Click 'Reveal Config Vars' -> Add key: 'PORT' and value: '8000'.
+
+vi. Click 'Add buildpack' -> add 'python' (for Python) and 'nodejs' (for Node.js).
+#### It is crucial that the order of buildpacks are as mentioned: 1(Shown as first) 'Python' and 2(Second) 'Nodejs'.
+
+vii. Navigate to the 'Deploy' tab.
+
+viii. Select 'GitHub' in the 'Deployment method' area.
+
+ix. Enter the GitHub repository name in the search bar -> 'Connect'.
+
+x. Click 'Deploy Branch' and wait for the build to complete.
+
+</details><br>
+
+<details><summary>GitHub Deployment</summary><br>
+
+
+i. Log into your GitHub account.<br>
+
+ii. Navigate to the repository (milosson/Hangman).<br>
+
+iii. Click on the 'Settings' option at the top of the repository.<br>
+
+iv. Select 'Pages' from the left-hand menu, located near the bottom.<br>
+
+v. Within the 'Source' tab, select the drop-down titled 'None'.<br>
+
+vi. Choose the branch named 'main' (in some cases, it can be named 'Master').<br>
+
+vii. Click 'Save'.<br>
+
+viii. You will be prompted with a URL to your deployed site.<br>
+
+ix. Your site is now deployed. Please note that it might take a moment for the URL to update. Refresh the page until the site is fully deployed. 
+</details><br>
+
+<details><summary>Forking The GitHub Repository</summary><br>
+
+
+i. Log into your GitHub account.<br>
+
+ii. Navigate to the repository you are willing to fork (milosson/Hangman).<br>
+
+iii. In the upper-right of the repository, click the 'Fork' button.<br>
+
+iv. A copy of the repository will now be available within your repositories.<br>
+
+v. You now have a copy of the code available to clone and work on without affecting the original code.
+</details><br>
+
+<details><summary>Cloning the Project</summary>
+
+To make a local clone of the project, follow these steps:
+
+i. Log into your GitHub account.<br>
+
+ii. Navigate to the repository (the-hangman).<br>
+
+iii. In the upper section of the repository, click the drop-down named 'Code'.<br>
+
+iv. Copy the SSH address (`git@github.com:Milosson/Hangman.git`).<br>
+
+v. Open GitBash.<br>
+
+vi. Navigate to the correct directory.<br>
+
+vii. Create a new directory named 'the-hangman-clone'.<br>
+
+viii. CD into 'the-hangman-clone'.<br>
+
+iv. Enter `git clone git@github.com:Milosson/Hangman.git`.<br>
+
+x. GitBash will clone the repository into this directory.<br>
+
+xi. Enter `code .`.
+</details><br>
+
  
 
-# License
+## License
 <details><summary><span style="background-color: #0000FF">MIT License</span></summary>
 
 Copyright (c) [2024] [Milo Razzaz]
@@ -198,6 +181,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</details>
+
+## Support Information
+
+For any issues or inquiries, please contact [ milorazzaz@protonmail.com ] 🖖
 
 ## Credits
 
