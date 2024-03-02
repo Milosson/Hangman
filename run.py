@@ -148,10 +148,10 @@ def hangmanthegame(wordlist, lives):
                     os.system(CC)
                     gamemenu()
                     game_options()
-                break
+                    break
                 elif replay == '2':
                     quit_game()
-                break
+                    break
                 else:
                     print("Invalid option, either 1 or 2.")
 
