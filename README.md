@@ -32,7 +32,121 @@ Lets diiiiive in! It will be a snare-tastic adventure!
 </details>
 
 ## Features
-   <h5> Future features</h5>
+
+### Dynamic Hangman Graphics
+- **Experience:** Dynamic hangman graphics that adapt based on the number of lives remaining.
+- **Enhancement:** Visual elements enhance the overall gaming experience.
+
+### Difficulty Levels
+- **Choose Your Challenge:** Three difficulty settings - Easy, Medium, and Hard.
+- **Variety:** Each difficulty level offers a unique set of word length and lives accordingly.
+
+### Random Word Selection
+- **Unpredictability:** Unpredictability in the random word choice keeps each gameplay fresh and exciting.
+
+### User Input Validation
+- **Valid Inputs:** Ensure your inputs are valid, allowing only single letter entries.
+- **Feedback:** Receive helpful feedback if an invalid input is provided.
+
+### Game Over and Victory Screens
+- **Visual Appeal:** Experience visually appealing ASCII art at the end of each gameplay.
+
+### Menu System
+- **Navigation:** Navigate through different options using the built-in menu system.
+- **Options:** Choose between quick play, difficulty selection, accessing game information, or terminating the app.
+
+### Clear Screen Functionality
+- **Maintain Clean Display:** Maintain a clean display throughout the game with screen-clearing.
+- **Visual Enhancement:** Enhancing the overall visual feeling during various stages.
+
+### Replay Option
+- **Seamless Experience:** Seamless gameplay experience without restarting the app.
+
+##
+### Main Game Lobby
+<details>
+  <summary>Main Game Lobby</summary>
+
+  - **Warm Welcome:** Upon launching the game, users are greeted with a warm welcome message.
+  - **Engaging Menu:** The game menu is presented to set the tone for an engaging gaming experience.
+
+  ![Hangman Lobby](/assets/images/hangman-start-main.JPG)
+
+</details>
+
+### Instant Quick Play
+
+<details>
+  <summary>Instant Quick Play</summary>
+
+  - **Spontaneous Gaming:** Option for a spontaneous gaming experience at the start with the quick play function.
+  - **Jump Into Action:** Allows the user to jump straight into the action without extensive setup.
+
+  ![Quick Play](/assets/images/hangman-opt1-easy.JPG)
+
+</details>
+
+### Difficulty Levels as Options
+
+<details>
+  <summary>Difficulty Levels as Options</summary>
+
+  - **Choose Your Challenge:** Choose from multiple difficulty levels, including Easy, Medium, and Hard.
+  - **Tailored Experience:** Tailor the gaming experience to your preferred level of challenge.
+
+  ![Difficulty Options](/assets/images/hangman-diffoption.JPG)
+
+</details>
+
+### Game Description
+
+<details>
+  <summary>Game Description</summary>
+
+  - **Classic Hangman:** Dive into the classic Hangman game with a touch of humor and suspense.
+  - **Console Interface:** Brought to life through a console-based interface.
+
+  ![Game Description](/assets/images/hangman-gamedescription.JPG)
+
+</details>
+
+### Winner Screen
+
+<details>
+  <summary>Winner Screen</summary>
+
+  - **Celebratory Display:** A celebratory display congratulating you on successfully guessing the word.
+
+  ![Winner Screen](/assets/images/hangman-winner.JPG)
+
+</details>
+
+### Game Over Screen
+<details>
+  <summary>Game Over Screen</summary>
+
+  - **Defeat Visuals:** Illustrations reflecting the game-over scenario.
+  
+  - **Replay Option:** Don't worry! We have a replay function ready for you ❤️.
+
+  ![Game Over](/assets/images/hangman-gameover.JPG)
+  
+</details>
+
+## Future Features
+
+### Multiplayer Mode
+- **Real-time Battles:** Challenge your friends or other players in real-time battles.
+
+### More Visuals
+- **Enhanced Experience:** Enhance the visual experience with additional graphics and more aligned, structured graphics.
+
+### Leaderboard
+- **Competitive Spirit:** Compete for the top spot and compare your Hangman skills with others.
+
+### Expand Wordlist
+- **Regular Updates:** Expand and update the wordlist regularly for a continuously enriching gameplay experience.
+
 
 ## Technologies
  - Python 3.12.2 - Game logics core language for this project<br>
@@ -56,6 +170,8 @@ Lets diiiiive in! It will be a snare-tastic adventure!
       * graphics
       * gamedescriptions
       * endgamevis
+      * winnerlogo
+      * TxtColor=(RC,GC,YC,RS)
    </details>
 
 ## Testing
