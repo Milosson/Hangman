@@ -264,8 +264,8 @@ def difficulty():
         selected_level, diff_lives = levels.get(choice, (None, None))
         if selected_level is not None:
             print(
-                f"{YC}You have chosen difficulty level:{RS} {choice}"
-                f"{YC}You will start with lives:{RS} {diff_lives} ❤️"
+                f"{YC}You have chosen difficulty level: {RS}{GC} {choice}{RS}"
+                f"{YC}You will start with lives: {RS}{GC} {diff_lives}{RS} ❤️"
             )
             return selected_level, diff_lives
             # Invalid input msg.

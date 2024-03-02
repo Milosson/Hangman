@@ -184,7 +184,7 @@ SOFTWARE.</details>
 
 ## Support Information
 
-For any issues or inquiries, please contact [ milorazzaz@protonmail.com ] 🖖
+For any issues or inquiries, please contact [ milorazzaz@protonmail.com ]
 
 ## Credits
 
