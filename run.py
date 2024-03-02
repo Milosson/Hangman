@@ -31,12 +31,18 @@ def print_hangman(lives):
     Function to print the hangman graphics in order
     based on the number of lives remaining.
 
+    Added exception handling to catch errors when an invalid nr
+    of life would be provided.
+
     Args:
       * lives (int): Remaining lives in the game.
     """
-    if 0 <= lives < len(HANGMAN_GRAPHICS):
-        print(HANGMAN_GRAPHICS[lives])
-    else:
+    try:
+        if 0 <= lives < len(HANGMAN_GRAPHICS):
+            print(HANGMAN_GRAPHICS[lives])
+        else:
+            raise ValueError("Game logic provided an unexpected value.")
+    except ValueError as e:
         print("Invalid number of lives provided.\n")
 
 
@@ -104,6 +110,7 @@ def hangmanthegame(wordlist, lives):
         # Validate user input.
         if len(user_letter) != 1 or user_letter not in abc:
             print(f"{RC}Invalid input. Please enter a single letter.{RS}\n")
+            sleep(2)
             continue
 
         # Check user input for already attempted letters.
