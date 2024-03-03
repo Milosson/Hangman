@@ -15,22 +15,52 @@ Victory or defeat, will you triumph or meet a ropey fate?
 
 Lets diiiiive in! It will be a snare-tastic adventure!
 
-<h2>Table of Contents</h2><br>
-<details><summary><span style="background-color: #0000FF">Click to preview content</span></summary><br>
+## Table of Contents
 
-* [Features](#features)
-  - [Future Features](#future-features)
-* [Technologies](#technologies)
-* [Testing](#testing)
-* [Flowchart](#flowchart)
-* [Deployment](#deployment)
-* [Support Information](#support-information)
-* [Credits / Acknowledgements](#credits--acknowledgements)
-* [License](#license)
-* [Bidding Adieu](#bidding-adieu)
+<details><summary>Click to preview content</summary><br>
 
+- [Features](#features)
+  - [Dynamic Hangman Graphics](#dynamic-hangman-graphics)
+  - [Difficulty Levels](#difficulty-levels)
+  - [Random Word Selection](#random-word-selection)
+  - [User Input Validation](#user-input-validation)
+  - [Game Over and Victory Screens](#game-over-and-victory-screens)
+  - [Menu System](#menu-system)
+  - [Clear Screen Functionality](#clear-screen-functionality)
+  - [Replay Option](#replay-option)
+  - [Main Game Lobby](#main-game-lobby)
+  - [Instant Quick Play](#instant-quick-play)
+  - [Difficulty Levels as Options](#difficulty-levels-as-options)
+  - [Game Description](#game-description)
+  - [Winner Screen](#winner-screen)
+  - [Game Over Screen](#game-over-screen)
+- [Future Features](#future-features)
+  - [Multiplayer Mode](#multiplayer-mode)
+  - [More Visuals](#more-visuals)
+  - [Leaderboard](#leaderboard)
+  - [Expand Wordlist](#expand-wordlist)
+- [Technologies](#technologies)
+- [Testing](#testing)
+  - [Automated Validation](#automated-validation)
+  - [Manual Testing](#manual-testing)
+  - [Fixed Bugs](#fixed-bugs)
+  - [Unresolved Bugs](#unresolved-bugs)
+  - [Conclusion of Testing](#conclusion-of-testing)
+- [Future Code Enhancement](#future-code-enhancements)  
+- [Flowchart](#flowchart)
+- [Deployment](#deployment)
+  - [Heroku Deployment](#heroku-deployment)
+  - [GitHub Deployment](#github-deployment)
+  - [Forking The GitHub Repository](#forking-the-github-repository)
+  - [Cloning the Project](#cloning-the-project)
+- [License](#license)
+- [Support Information](#support-information)
+- [Credits / Acknowledgements](#credits--acknowledgements)
+- [Heartfelt Gratitude](#heartfelt-gratitude)
+- [Bidding Adieu](#bidding-adieu)
 
 </details>
+
 
 ## Features
 
@@ -150,15 +180,15 @@ Lets diiiiive in! It will be a snare-tastic adventure!
 
 
 ## Technologies
- - Python 3.12.2 - Game logics core language for this project<br>
- - GitHub Git version 2.43.2 - Version control platform for hosting the project.<br>
- - Heroku - Deployment platform for this project.
- - README.md - The markdown file including all project documentations.<br>
- - Replit and VScode as testing ground both local and IDE.
- - Cacoo for flowchart
- - Am I Responsive for the mockups.
- - CI Python Linter for validation of code.
- <br><details><summary>Modules</summary>
+ - Python 3.12.2: The core language for implementing game logics in this project<br>
+ - GitHub Git version 2.43.2: Version control platform used for hosting and collaborative development.<br>
+ - Heroku: Deployment platform for hosting this project.
+ - README.md: The markdown file serves as comprehensive documentation, encapsulating essential information about this project <br>
+ - Replit and VScode: Used as testing grounds, providing both local and integrated development environment (IDE) testing..
+ - Cacoo: Utilized for creating the project's flowchart.
+ - Am I Responsive: Creating the the responsive mockups.
+ - CI Python Linter: Used for code validation, ensuring adherence to PEP8 standards and maintaining code quality.
+ <br><h4><details><summary>Modules</summary>
    - random<br>
    - os<br>
    - string<br>
@@ -173,27 +203,68 @@ Lets diiiiive in! It will be a snare-tastic adventure!
       * endgamevis
       * winnerlogo
       * TxtColor=(RC,GC,YC,RS)
-   </details>
+   </details></h4>
 
 ## Testing
+#### CI Python Linter
 Validation through [CI Python Linter](https://pep8ci.herokuapp.com/#)<br>
 Initially, I encountered various linter and whitespace issues, which I resolved during local testing and in my IDE. The final result adheres to PEP8 standards, with no errors remaining.
-<details><summary> CI-Python Linter Img.1</summary>
+<details><summary> CI-Python Linter Image-1</summary>
 
 ![Linter1](/assets/images/linter1.JPG)
 </details>
-<details><summary> CI-Python Linter Img.2</summary>
+<details><summary> CI-Python Linter Image-2</summary>
 
 ![Linter1](/assets/images/linter2.JPG)
 </details>
-<details><summary> CI-Python Linter Img.3</summary>
+<details><summary> CI-Python Linter Image-3</summary>
 
 ![Linter1](/assets/images/linter3.JPG)
 </details>
-<details><summary> CI-Python Linter Img.4</summary>
+<details><summary> CI-Python Linter Image-4</summary>
 
 ![Linter1](/assets/images/linter4.JPG)
 </details>
+<br>
+
+#### Lighthouse Report
+
+<details><summary>Lighthouse Report</summary>
+<h3>The "Best Method" circle bar is affected by an UnloadHandler from the limit-time.js<br>
+   *** window.addEventListener('unload', () => { chrome.runtime.onMessage.removeListener(handleExtensionEvents); }); ***
+</h3><br>
+
+![Lighthouse](/assets/images/LighthouseHANGMAN1.JPG)
+
+</details>
+
+
+### Manual Testing
+
+|What was tested|Result|
+|---|---|
+|Main Loby Menu: Loading. |Passed|
+|Spam testing the main loby menu and all the input sections. |Passed|
+|Quick play Option 1: Easy mode with 5 lives as an default for quick play. |Passed|
+|Select difficulty Option 2: Randomised words should be relevant to the difficulty selected.|Passed|
+|Game Description Option 3: Game description with explaination about users choice within difficulty option.|Passed|
+|Terminate App Option 4: Should only allow the user to input either, easy, medium, hard, error message if neither of these are selected|Passed|
+|Already guessed letters: A message should display to the user that they have already guessed that specific letter|Passed|
+|Invalid inputs: Stress tested with invalid inputs, for all sections with input. invalid msg show as excpected|Passed|
+|Win / Lose message: A message should display to the user if they have either won or lost the game|Passed|
+
+### Fixed Bugs
+
+|What was tested / Expected results|Actual Results|What was done to fix the bug|
+|---|---|---|
+|Incrementation on the Hang man drawings |It didn't increment at all |I moved the Hang man graphics to the right section within the codeblock, It didn't get called as expected.|
+The clear screen functionality was bugging when tested on macOS|Didn't clear screen at all|By adding varible CC that includes 'posix' else 'cls' for Unix and Windows|
+
+### Unresolved Bugs
+
+| What was tested / Expected results                        | Actual Results                                           | What was done to fix the bug                             |
+| --------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| Spamming inputs while the delay time is active on Invalid msgs. | Delayed rendering of Invalid message during spam inputs   | Nothing has been done to fix this issue at the moment.  |
 <br>
 
 
@@ -227,6 +298,34 @@ Initially, I encountered various linter and whitespace issues, which I resolved 
 | **Feature**                        | **Action**                                   | **Expected Result**                         | **Actual Result**                         |
 | -----------------------------------| ---------------------------------------------| ------------------------------------------| ----------------------------------------|
 | Winner Screen                       | User requests a winner screen at the end     | Winner screen displayed for a celebratory end of the game | Works as expected                   |
+### 6. Color scheme
+
+| **Feature**                        | **Action**                                   | **Expected Result**                         | **Actual Result**                         |
+| -----------------------------------| ---------------------------------------------| ------------------------------------------| ----------------------------------------|
+| Throughout Color scheme     | User request to have a more throughout color in the app    | More visually appealing color scheme | Works as expected                   |
+
+<details><summary>Conclusion of Testing</summary>
+
+The testing phase for the Hangman - Snare the Rope Edition project was thorough, covering functionality, user experience, and bug resolution. Both automated validation through the CI Python Linter and manual testing were employed to ensure a stable and error-free gaming experience.
+
+The testing process significantly contributed to refining the project, resulting in a stable, user-friendly, and entertaining gaming experience.
+
+### Future Considerations
+The testing phase provided valuable insights, leading to potential future improvements:
+
+- **Bug Resolution:** Addressing the unresolved bug related to spamming inputs.
+- **User Interface Enhancements:** Continuously improving visual and interactive elements for an enhanced gaming experience.
+- **Feature Additions:** Exploring opportunities to add multiplayer mode, more visuals, a leaderboard, and an expanded wordlist.
+
+</details>
+
+<details><summary>Future Code Enhancements</summary>
+
+In future iterations of the project, I plan to enhance the codebase by incorporating more robust exception handling syntax. Additionally, I intend to refactor the main game loop, 'hangmanthegame', into smaller, well-organized sections. This restructuring aims to improve readability and maintainability, making it easier for both assessors and myself to comprehensively test different functions.
+
+I identified the need for these improvements during manual testing, realizing that a more structured approach would enhance the overall quality and understandability of the code.
+
+</details>
 
 
 ## Flowchart
@@ -354,14 +453,47 @@ SOFTWARE.</details>
 
 For any issues or inquiries, please contact [ milorazzaz@protonmail.com ]
 
-## Credits
+## Credits / Acknowledgements
 
-ADD CREDITS 
+Initially, I found myself at a crossroads, uncertain about the direction to take for this project. A special thanks to @GarethMcGirr, my mentor, who provided valuable guidance during our session, helping me navigate through different options.
 
-## Acknowledgements
+### Code 
+- The foundation of my project draws inspiration from various sources within the coding community. I owe gratitude to multiple channels and platforms, including Slack and my peers, whose previous submissions served as a wellspring of inspiration, guiding me to carve my own path.
+>
+  * *[Code Institute](https://codeinstitute.net/) - The main source of knowledge used to create this project.*
+      * *[Love Sandwiches](https://github.com/Milosson/love-sandwiches) - The initial Python project in collaboration with school provided the confidence to apply the acquired knowledge.*
+  * *[Stack Overflow](https://stackoverflow.com/search?page=3&tab=Relevance&pagesize=15&q=hangman%20python&searchOn=3) - A valuable forum where I found solutions and insights related to Hangman in Python.*
+  * *[Stack Exchange](https://stackexchange.com/search?q=hangman+python) - Another resourceful forum on Hangman in Python, where I encountered and resolved common errors and issues.*
+  * *[MakeUseOf](https://www.makeuseof.com/python-game-hangman-create/?utm_source=flipboard&utm_content=topic%2Fadventuregame) - Another resourceful website that proved useful for comparison and logic implementation.*
+  * *[Unga Programmerare](https://www.youtube.com/watch?v=fB4Yp72ngR4&t=479s&ab_channel=UngaProgrammerare) - A YouTube channel that provided insights into game logic, presented in my native language.*
+  * *[Kite](https://www.youtube.com/watch?v=m4nEnsavl6w&ab_channel=Kite) - Another YouTube channel, Kite, was instrumental in cross-comparing game logics and understanding general code structures.*
+  * *[ANSI Escape](https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal/7839185#7839185) - Inspiration for the ANSI Escape.* 
 
-ADD ACKNOWLEDGEMENTS
+### Heartfelt Gratitude
+
+I would like to express my sincere gratitude to one of the most exceptional Slack communities I've had the privilege of being a part of - **[CODEINSTITUTE](https://codeinstitute.net/)**. The community is filled with dedicated **peers**, **mentors**, and **tutors** who have made the coding journey, with all its challenges and moments of progression, incredibly rewarding.
+
+Special thanks to the following individuals:
+
+**My Dad(Hadi Razzaz):** Serving as both a first-time user of the app and an advisor, he brings a wealth of experience as a working systems specialist with many years in the field. His insights and guidance have been crucial in shaping my progress.
+
+**Samson:** A first-time user of the app who provided valuable feedback during a Discord meeting.
+
+**Syllet:** Another first-time user of the app who shared feedback in collaboration with Samson during a joint meeting.
+
+**Nabz:** An advisor and guide with an iron fist, directing me to the right forums, providing constructive criticism, and serving as both a tester and a first-time user.
+
+Your insights and contributions have been invaluable. Thank you for being a part of this journey!
+
 
 ## Bidding Adieu
 
-Hang tight! ;) I'll add some vitty heereee soon!
+```  
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+Hang tight!𓍯 I'll be back with more code-tastic adventures🪂 and witty banter before you know it! Until then, may your variables be well-defined, and your algorithms run with the grace of a well-optimized function. Catch you on the flip side! 👨🏻‍💻👩🏻‍💻
