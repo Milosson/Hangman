@@ -24,6 +24,8 @@ EMOJI_LIVES = "❤️ "
 HANGMAN_GRAPHICS = graphics
 # Declaring variable for system clear to function Unix and Windows
 CC = 'clear' if os.name == 'posix' else 'cls'
+# Declaring global variable to remove magic number.
+MAX_HANGMAN_STAGES = len(HANGMAN_GRAPHICS)
 
 
 def print_hangman(lives):
@@ -38,12 +40,12 @@ def print_hangman(lives):
       * lives (int): Remaining lives in the game.
     """
     try:
-        if 0 <= lives < len(HANGMAN_GRAPHICS):
+        if 0 <= lives < MAX_HANGMAN_STAGES:
             print(HANGMAN_GRAPHICS[lives])
         else:
-            raise ValueError("Game logic provided an unexpected value.")
+            raise ValueError("Invalid number of lives! Value out of range")
     except ValueError as e:
-        print("Invalid number of lives provided.\n")
+        print(f"Error: {e}.\n")
 
 
 def retrieve_valid_word(wordlist):
@@ -59,6 +61,27 @@ def retrieve_valid_word(wordlist):
     """
     secret_word = random.choice(wordlist)
     return secret_word.lower()
+
+
+def handle_replay():
+    """
+    Function to handle the option for the user to play again
+    after the game is either won or lost.
+    By choosing 1 for the main menu and 2 for exit, both need confirmation
+    with 'Enter'.
+    """
+    while True:
+        replay = input("Main menu 1, Exit 2, Enter to confirm\n")
+        if replay == '1':
+            os.system(CC)
+            gamemenu()
+            game_options()
+            break
+        elif replay == '2':
+            quit_game()
+            break
+        else:
+            print("Invalid option, Either 1 or 2 - confirm with enter!")
 
 
 def hangmanthegame(wordlist, lives):
@@ -91,7 +114,7 @@ def hangmanthegame(wordlist, lives):
         # Display the current state (lives remaining - displayed as hearts)
         print(f"{GC}Lives {EMOJI_LIVES * lives}{RS}")
         # Increment the hangman drawing based on failed attempts.
-        print_hangman(6 - lives)
+        print_hangman(MAX_HANGMAN_STAGES - lives)
         print(f"{YC}letters used: {' '.join(used_letters)}{RS}\n")
 
         word_in_list = [
@@ -142,18 +165,7 @@ def hangmanthegame(wordlist, lives):
             print(winnerlogo)
             print(f"You survived the gallow with {lives} ❤️ remaining.")
             sleep(2)
-            while True:
-                replay = input("Return to main menu press 1, exit press 2. \n")
-                if replay == '1':
-                    os.system(CC)
-                    gamemenu()
-                    game_options()
-                    break
-                elif replay == '2':
-                    quit_game()
-                    break
-                else:
-                    print("Invalid option, either 1 or 2.")
+            handle_replay()
 
     # Game over -> Clear screen -> Display word - Show end game visuals.
     if lives == 0:
@@ -161,18 +173,7 @@ def hangmanthegame(wordlist, lives):
         print(endgamevis)  # Visual imported from module.
         print(HANGMAN_GRAPHICS[6])  # Print the last stage of hangman.
         print(f"You ran out of lives. The word was: {GC}{secret_word}{RS}\n")
-        while True:
-            replay = input("Return to main menu press 1, exit press 2. \n")
-            if replay == '1':
-                os.system(CC)
-                gamemenu()
-                game_options()
-                break
-            elif replay == '2':
-                quit_game()
-                break
-            else:
-                print("Invalid option, either 1 or 2.")
+        handle_replay()
 
 
 def gamemenu():
