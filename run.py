@@ -86,7 +86,16 @@ def handle_replay():
 
 def hangmanthegame(wordlist, lives):
     """
-    Function to play the game, will call other functions accordingly.
+    Sets up the Hangman game, where players guess letters
+    to unveil the secret word.
+    Provides visual feedback with Hangman drawings,
+    current word state, and used letters.
+
+    Continues until the player guesses the word or runs out of lives.
+    Displays congrats or correct word based on the outcome.
+
+    Includes input validation, checks for repeated letters,
+    and handles user interaction.
 
     Args:
     * wordlist (list): List of words for random pick.
@@ -94,6 +103,11 @@ def hangmanthegame(wordlist, lives):
 
     Return:
     * str: The randomly selected word (conv. to lowercase)
+
+    Future Plan:
+    * The function is planned to be refactored into smaller functions
+    for better readability and maintainability.
+
     """
     # Retrieves the word from wordlist.
     secret_word = retrieve_valid_word(wordlist)
