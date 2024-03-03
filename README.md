@@ -3,6 +3,8 @@
 ## A SNARE-TASTIC GAME
 ![Game Img Mockup](/assets/images/pythonsnippet.JPG)
 
+[LIVE LINK FOR THE GAME](https://the-hangman-e57a462a667e.herokuapp.com/)<br>
+[GitHub Repo](https://github.com/Milosson/Hangman)
 ## Project description
 
 Welcome to Hangman game - Snare the Rope Edition.<br>
